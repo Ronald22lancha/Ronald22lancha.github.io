@@ -1,6 +1,6 @@
 const yesBtn = document.querySelector('#yesBtn');
 
-yesBtn.addEventListener('click',function() {
+yesBtn.addEventListener('click', function() {
     alert('Ahora pásame🤤😎');
 });
 
@@ -55,14 +55,11 @@ noBtn.addEventListener('mouseover', function(){
     }
 });
 
-window.addEventListener('beforeunload', function(event) {
-    // Cancela el evento de cierre para mostrar el mensaje de confirmación personalizado
-    event.preventDefault();
-
-    // Establece el mensaje que se mostrará en el cuadro de diálogo de confirmación del navegador
-    event.returnValue = '';
-
+// Detecta cuando el usuario navega hacia adelante o hacia atrás en la historia del navegador
+window.addEventListener('popstate', function(event) {
     // Redirige al usuario de vuelta a la misma página
     window.location.href = window.location.href;
 });
 
+// Guarda una nueva entrada en la historia del navegador
+history.pushState(null, null, document.URL);
