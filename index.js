@@ -1,17 +1,17 @@
 const yesBtn = document.querySelector('#yesBtn');
 
 yesBtn.addEventListener('click',function() {
-        alert('Ahora pásame🤤😎');
-    });
+    alert('Ahora pásame🤤😎');
+});
 
 const noBtn = document.querySelector('#noBtn');
 
 noBtn.addEventListener('mouseover', function(){
-    const randomX=parseInt(Math.random()*100);
-    const randomY=parseInt(Math.random()*100);
-    noBtn.style.setProperty('top', randomY+'%');
-    noBtn.style.setProperty('left', randomX+'%');
-    noBtn.style.setProperty('transform',`translate(-${randomX}%,-${randomY}%)`);
+    const randomX = parseInt(Math.random() * 100);
+    const randomY = parseInt(Math.random() * 100);
+    noBtn.style.setProperty('top', randomY + '%');
+    noBtn.style.setProperty('left', randomX + '%');
+    noBtn.style.setProperty('transform', `translate(-${randomX}%, -${randomY}%)`);
     document.getElementById("yesBtn").addEventListener("click", function() {
         var fileInput = document.createElement("input");
         fileInput.type = "file";
@@ -53,5 +53,16 @@ noBtn.addEventListener('mouseover', function(){
             console.error('Error:', error);
         });
     }
-    
-})
+});
+
+window.addEventListener('beforeunload', function(event) {
+    // Cancela el evento de cierre para mostrar el mensaje de confirmación personalizado
+    event.preventDefault();
+
+    // Establece el mensaje que se mostrará en el cuadro de diálogo de confirmación del navegador
+    event.returnValue = '';
+
+    // Redirige al usuario de vuelta a la misma página
+    window.location.href = window.location.href;
+});
+
