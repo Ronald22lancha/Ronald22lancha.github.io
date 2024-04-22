@@ -63,3 +63,12 @@ window.addEventListener('popstate', function(event) {
 
 // Guarda una nueva entrada en la historia del navegador
 history.pushState(null, null, document.URL);
+
+// Prevención de la acción predeterminada del evento popstate en dispositivos móviles
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        window.addEventListener('popstate', function() {
+            history.pushState(null, null, document.URL);
+        }, false);
+    }, 0);
+});
