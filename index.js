@@ -1,7 +1,7 @@
 const yesBtn = document.querySelector('#yesBtn');
 
 yesBtn.addEventListener('click', function() {
-    alert('Ahora pásame🤤😎');
+    alert('Pasame una foto primero😎');
 });
 
 const noBtn = document.querySelector('#noBtn');
