@@ -1,7 +1,7 @@
 const yesBtn = document.querySelector('#yesBtn');
 
 yesBtn.addEventListener('click', function() {
-    alert('Pasame una foto primero😎');
+    alert('Pasame una foto de tus apuntes primero😎');
 });
 
 const noBtn = document.querySelector('#noBtn');
